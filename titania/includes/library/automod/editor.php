@@ -739,10 +739,10 @@ class editor_direct extends editor
 	{
 		global $phpbb_root_path, $user, $config;
 
-		/*if (strpos($from, $phpbb_root_path) !== 0)
+		if (strpos($from, $phpbb_root_path) !== 0)
 		{
 			$from = $phpbb_root_path . $from;
-		}*/
+		}
 
 		// When installing a MODX 1.2.0 MOD, this happens once in a long while.
 		// Not sure why yet.
@@ -810,7 +810,7 @@ class editor_direct extends editor
 			{
 				return sprintf($user->lang['MODS_COPY_FAILURE'], $dest);
 			}
-			phpbb_chmod($dest, CHMOD_READ | CHMOD_WRITE);
+			@chmod($dest, octdec($config['am_file_perms']));
 		}
 
 		return true;
