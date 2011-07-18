@@ -693,7 +693,7 @@ class titania_contrib_tools
 		$style_root = $phpbb_root_path . 'styles/' . basename(strtolower(str_replace(' ', '_', $stylecfg['name']))) . '_' . $contrib->contrib_id . '/';
 		
 		// Remove old Style files first, before we upload new Style files
-		$this->rmdir_recursive($style_root);
+		$this->rmdir_recursive($style_root, false);
 
 		$this->mvdir_recursive($this->unzip_dir . $package_root, $style_root, false);
 		$this->rmdir_recursive($this->unzip_dir, true);
@@ -1026,7 +1026,7 @@ parse_css_file = {PARSE_CSS_FILE}
 		$target_filename = (substr($target_filename, -1) == '/') ? $target_filename : $target_filename . '/';
 
 		// Some simple file protection to prevent getting out of the titania root
-		if ($check_minimum_directory)
+		if ($check_minimum_directory == true)
 		{
 			if (!$this->check_filesystem_path($target_filename))
 			{
