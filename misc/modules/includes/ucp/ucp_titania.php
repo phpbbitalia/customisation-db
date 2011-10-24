@@ -17,11 +17,6 @@ global $phpbb_root_path;
 define('TITANIA_ROOT', $phpbb_root_path . '../customise/db/');
 
 /**
-* Set this on true if the default header and footer of the Style need to be loaded
-*/
-define('LOAD_CUSTOM_STYLE', true);
-
-/**
 * @ignore
 */
 if (!defined('IN_PHPBB'))
@@ -421,6 +416,7 @@ class ucp_titania
 		phpbb::$template->assign_vars(array(
 			'S_ACTION'				=> $url,
 			'TITANIA_THEME_PATH' 	=> titania::$absolute_path . 'styles/' . titania::$config->style . '/theme/'
+			'S_IS_FORUM' 		=> false,
 		));
 
 		titania::page_header(phpbb::$user->lang['SUBSCRIPTION_TITANIA']);
