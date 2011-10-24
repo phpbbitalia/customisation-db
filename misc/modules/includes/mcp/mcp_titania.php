@@ -17,6 +17,11 @@ global $phpbb_root_path;
 define('TITANIA_ROOT', $phpbb_root_path . '../customise/db/');
 
 /**
+* Set this on true if the default header and footer of the Style need to be loaded
+*/
+define('LOAD_CUSTOM_STYLE', true);
+
+/**
 * @ignore
 */
 if (!defined('IN_PHPBB'))
@@ -64,7 +69,6 @@ class mcp_titania
 		phpbb::$template->assign_vars(array(
 			'L_TITLE'		=> phpbb::$user->lang['ATTENTION'],
 			'L_EXPLAIN'		=> '',
-			'S_IS_FORUM' 		=> false,
 		));
 
 		include(TITANIA_ROOT . 'manage/attention.' . PHP_EXT);
