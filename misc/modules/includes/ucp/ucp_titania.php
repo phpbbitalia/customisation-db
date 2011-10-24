@@ -17,6 +17,11 @@ global $phpbb_root_path;
 define('TITANIA_ROOT', $phpbb_root_path . '../customise/db/');
 
 /**
+* Set this on true if the default header and footer of the Style need to be loaded
+*/
+define('NOT_IN_COMMUNITY', false);
+
+/**
 * @ignore
 */
 if (!defined('IN_PHPBB'))
