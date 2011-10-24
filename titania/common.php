@@ -21,6 +21,12 @@ if (!defined('NOT_IN_COMMUNITY'))
 	define('NOT_IN_COMMUNITY', true);
 }
 
+// Set this on true if the default header and footer of the Style need to be loaded
+if (defined('LOAD_CUSTOM_STYLE'))
+{
+	define('NOT_IN_COMMUNITY', false);
+}
+
 // Version number (only used for the installer)
 define('TITANIA_VERSION', '0.3.13');
 
